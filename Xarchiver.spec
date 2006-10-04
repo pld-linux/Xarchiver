@@ -1,4 +1,4 @@
-# $Revision: 1.2 $Date: 2006-10-04 20:26:32 $
+# $Revision: 1.3 $Date: 2006-10-04 21:51:04 $
 #
 %define		xfce_version 4.3.99.1
 #
@@ -12,11 +12,13 @@ Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/xarchiver-%{version}.tar.bz2
 # Source0-md5:	b74d61fd0998fa36c14ccb24e91e8ded
 URL:		http://xarchiver.xfce.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2:2.10.1
+BuildRequires:	pkgconfig
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.198
+BuildRequires:	xfce4-dev-tools >= %{xfce_version}
 Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
