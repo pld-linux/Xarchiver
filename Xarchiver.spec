@@ -1,20 +1,21 @@
-# $Revision: 1.3 $Date: 2006-10-04 21:51:04 $
+# $Revision: 1.4 $Date: 2006-11-06 18:40:59 $
 #
-%define		xfce_version 4.3.99.1
+%define		_rc		rc2
+%define		xfce_version	4.3.99.2
 #
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
 Summary(pl):	Xarchiver - nak³adka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
-Version:	0.4.0
-Release:	1
+Version:	0.4.2
+Release:	0.%{_rc}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/xarchiver-%{version}.tar.bz2
-# Source0-md5:	b74d61fd0998fa36c14ccb24e91e8ded
+Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/xarchiver-%{version}%{_rc}.tar.bz2
+# Source0-md5:	a05010faa1131bbba184595865b70e63
 URL:		http://xarchiver.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2:2.10.1
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	pkgconfig
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.198
@@ -36,7 +37,7 @@ formatach. Obs³uguje równie¿ archiwa 7z, zip, rar i arj zabezpieczone
 has³em.
 
 %prep
-%setup -q -n xarchiver-%{version}
+%setup -q -n xarchiver-%{version}%{_rc}
 
 %build
 %{__libtoolize}
@@ -52,6 +53,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{_docdir}/xarchiver/{AUTHORS,ChangeLog,COPYING,NEWS,README,TODO}
 
 %find_lang xarchiver
 
@@ -69,6 +72,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog FAQ README TODO
 %attr(755,root,root) %{_bindir}/xarchiver
 %attr(755,root,root) %{_libdir}/thunar-archive-plugin/*.tap
+%docdir %{_docdir}/xarchiver
+%{_docdir}/xarchiver/html
 %{_datadir}/xarchiver
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
