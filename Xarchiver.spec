@@ -1,4 +1,4 @@
-# $Revision: 1.4 $Date: 2006-11-06 18:40:59 $
+# $Revision: 1.5 $Date: 2006-11-06 18:49:34 $
 #
 %define		_rc		rc2
 %define		xfce_version	4.3.99.2
@@ -72,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog FAQ README TODO
 %attr(755,root,root) %{_bindir}/xarchiver
 %attr(755,root,root) %{_libdir}/thunar-archive-plugin/*.tap
+%dir %{_docdir}/xarchiver
 %docdir %{_docdir}/xarchiver
 %{_docdir}/xarchiver/html
 %{_datadir}/xarchiver
