@@ -1,26 +1,27 @@
-# $Revision: 1.5 $Date: 2006-11-06 18:49:34 $
+# $Revision: 1.6 $Date: 2007-01-23 18:08:41 $
 #
-%define		_rc		rc2
-%define		xfce_version	4.3.99.2
+%define		xfce_version	4.4.0
 #
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
 Summary(pl):	Xarchiver - nak³adka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
-Version:	0.4.2
-Release:	0.%{_rc}.1
+Version:	0.4.6
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/xarchiver-%{version}%{_rc}.tar.bz2
-# Source0-md5:	a05010faa1131bbba184595865b70e63
+Source0:	http://dl.sourceforge.net/xarchiver/xarchiver-%{version}.tar.bz2
+# Source0-md5:	9700305deef4e2b6878697bd18bd2dd9
 URL:		http://xarchiver.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 2:2.10.6
-BuildRequires:	pkgconfig
+BuildRequires:	gtk+2-devel >= 2:2.8.20
 BuildRequires:	libtool
-BuildRequires:	rpmbuild(macros) >= 1.198
+BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	xfce4-dev-tools >= %{xfce_version}
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk+2
+Requires(post,postun):	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +38,7 @@ formatach. Obs³uguje równie¿ archiwa 7z, zip, rar i arj zabezpieczone
 has³em.
 
 %prep
-%setup -q -n xarchiver-%{version}%{_rc}
+%setup -q -n xarchiver-%{version}
 
 %build
 %{__libtoolize}
@@ -63,18 +64,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_desktop_database_post
+%update_icon_cache hicolor
 
 %postun
 %update_desktop_database_postun
+%update_icon_cache hicolor
 
 %files -f xarchiver.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog FAQ README TODO
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/xarchiver
 %attr(755,root,root) %{_libdir}/thunar-archive-plugin/*.tap
 %dir %{_docdir}/xarchiver
 %docdir %{_docdir}/xarchiver
 %{_docdir}/xarchiver/html
-%{_datadir}/xarchiver
+%{_iconsdir}/hicolor/*/apps/*.png
+%{_pixmapsdir}/xarchiver
 %{_desktopdir}/*.desktop
-%{_pixmapsdir}/*.png
