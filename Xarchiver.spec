@@ -1,4 +1,3 @@
-# $Revision: 1.6 $Date: 2007-01-23 18:08:41 $
 #
 %define		xfce_version	4.4.0
 #
