@@ -2,7 +2,7 @@
 %define		xfce_version	4.4.0
 #
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
-Summary(pl.UTF-8):   Xarchiver - nakładka GTK+2 na popularne formaty kompresji
+Summary(pl.UTF-8):	Xarchiver - nakładka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
 Version:	0.4.6
 Release:	1
