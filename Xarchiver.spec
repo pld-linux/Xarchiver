@@ -2,7 +2,7 @@
 %define		xfce_version	4.4.0
 #
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
-Summary(pl):	Xarchiver - nak≥adka GTK+2 na popularne formaty kompresji
+Summary(pl.UTF-8):   Xarchiver - nak≈Çadka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
 Version:	0.4.6
 Release:	1
@@ -29,12 +29,12 @@ and rpm (open and extract only). Xarchiver allows to create, add,
 extract and delete files in the above formats. 7z, zip, rar and arj
 password protected archives are supported.
 
-%description -l pl
-Xarchiver to nak≥adka GTK+2 na 7z, zip, rar, tar, bzip2, gzip, arj i
-rpm (tylko otwieranie i rozpakowywanie). Xarchiver umoøliwia
-tworzenie, dodawanie, rozpakowywanie oraz usuwanie plikÛw w powyøszych
-formatach. Obs≥uguje rÛwnieø archiwa 7z, zip, rar i arj zabezpieczone
-has≥em.
+%description -l pl.UTF-8
+Xarchiver to nak≈Çadka GTK+2 na 7z, zip, rar, tar, bzip2, gzip, arj i
+rpm (tylko otwieranie i rozpakowywanie). Xarchiver umo≈ºliwia
+tworzenie, dodawanie, rozpakowywanie oraz usuwanie plik√≥w w powy≈ºszych
+formatach. Obs≈Çuguje r√≥wnie≈º archiwa 7z, zip, rar i arj zabezpieczone
+has≈Çem.
 
 %prep
 %setup -q -n xarchiver-%{version}
