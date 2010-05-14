@@ -14,6 +14,7 @@ Patch0:		%{name}-desktop.patch
 URL:		http://xarchiver.xfce.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.8.20
 BuildRequires:	intltool
 BuildRequires:	libtool
