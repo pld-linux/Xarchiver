@@ -1,10 +1,8 @@
---- xarchiver-0.5.2/xarchiver.desktop.in~	2008-06-27 07:24:12.000000000 +0200
-+++ xarchiver-0.5.2/xarchiver.desktop.in	2010-05-11 12:37:51.722414050 +0200
-@@ -9,6 +9,6 @@
- Terminal=false
- Type=Application
- X-MultipleArgs=false
+--- xarchiver-0.5.2/xarchiver.desktop.in	2010-05-11 12:37:51.722414050 +0200
++++ xarchiver-0.5.2/xarchiver.desktop.in	2011-07-09 16:22:03.392308692 +0300
+@@ -12,3 +12,3 @@
 -Categories=GTK;Archiving;Utility;
 +Categories=X-XFCE;GTK;Archiving;Utility;
  StartupNotify=true
- MimeType=application/x-arj;application/arj;application/x-bzip;application/x-bzip-compressed-tar;application/x-gzip;application/x-rar;application/x-rar-compressed;application/x-tar;application/x-zip;application/x-zip-compressed;application/zip;multipart/x-zip;application/x-7z-compressed;application/x-compressed-tar;application/x-bzip2;application/x-bzip2-compressed-tar;
+-MimeType=application/x-arj;application/arj;application/x-bzip;application/x-bzip-compressed-tar;application/x-gzip;application/x-rar;application/x-rar-compressed;application/x-tar;application/x-zip;application/x-zip-compressed;application/zip;multipart/x-zip;application/x-7z-compressed;application/x-compressed-tar;application/x-bzip2;application/x-bzip2-compressed-tar;
++MimeType=application/x-arj;application/arj;application/x-bzip;application/x-bzip-compressed-tar;application/x-gzip;application/x-rar;application/x-rar-compressed;application/x-tar;application/x-zip;application/x-zip-compressed;application/zip;application/x-7z-compressed;application/x-compressed-tar;application/x-bzip2;application/x-bzip2-compressed-tar;
