@@ -10,7 +10,7 @@ Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/xarchiver/xarchiver-%{version}.tar.bz2
 # Source0-md5:	2bc7f06403cc6582dd4a8029ec9d038d
 Patch0:		%{name}-desktop.patch
-URL:		http://xarchiver.xfce.org/
+URL:		https://github.com/ib/xarchiver/wiki
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel
