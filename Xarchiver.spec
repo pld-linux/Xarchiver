@@ -1,11 +1,10 @@
-#
+
 %define		xfce_version	4.4.0
-#
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
 Summary(pl.UTF-8):	Xarchiver - nakładka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
 Version:	0.5.2
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/xarchiver/xarchiver-%{version}.tar.bz2
@@ -58,11 +57,10 @@ sed -e 's/nb_NO/nb/;s/pt_PT/pt/' -i po/LINGUAS
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_docdir}/xarchiver/{AUTHORS,ChangeLog,COPYING,NEWS,README,TODO}
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/xarchiver/{AUTHORS,ChangeLog,COPYING,NEWS,README,TODO}
 
 %find_lang xarchiver
 
@@ -85,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_docdir}/xarchiver
 %docdir %{_docdir}/xarchiver
 %{_docdir}/xarchiver/html
-%{_iconsdir}/hicolor/*/apps/*
+%{_iconsdir}/hicolor/*/apps/xarchiver.png
+%{_iconsdir}/hicolor/scalable/apps/xarchiver.svg
 %{_pixmapsdir}/xarchiver
 %{_desktopdir}/*.desktop
