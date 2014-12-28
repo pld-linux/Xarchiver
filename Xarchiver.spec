@@ -14,7 +14,7 @@ Patch1:		format-security.patch
 URL:		https://github.com/ib/xarchiver/wiki
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.8.20
 BuildRequires:	intltool
 BuildRequires:	libtool
