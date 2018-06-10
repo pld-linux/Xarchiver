@@ -3,12 +3,12 @@
 Summary:	Xarchiver - a GTK+2 frontend to popular compression formats
 Summary(pl.UTF-8):	Xarchiver - nakładka GTK+2 na popularne formaty kompresji
 Name:		Xarchiver
-Version:	0.5.4
+Version:	0.5.4.13
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://downloads.sourceforge.net/xarchiver/xarchiver-%{version}.tar.bz2
-# Source0-md5:	1b4cd37a6af03afc957a8e307417e8d0
+Source0:	https://github.com/ib/xarchiver/archive/%{version}/xarchiver-%{version}.tar.gz
+# Source0-md5:	e4cb50fbd5311d1a67cfdc946904a32a
 Patch0:		%{name}-desktop.patch
 URL:		https://github.com/ib/xarchiver/wiki
 BuildRequires:	autoconf >= 2.50
@@ -41,9 +41,8 @@ hasłem.
 %prep
 %setup -q -n xarchiver-%{version}
 %patch0 -p1
-mv -f po/nb{_NO,}.po
 mv -f po/pt{_PT,}.po
-sed -e 's/nb_NO/nb/;s/pt_PT/pt/' -i po/LINGUAS
+sed -e 's/pt_PT/pt/' -i po/LINGUAS
 
 %build
 %{__intltoolize}
@@ -60,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_docdir}/xarchiver/{AUTHORS,ChangeLog,COPYING,NEWS,README,TODO}
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/xarchiver/{ChangeLog,COPYING,README}
 
 %find_lang xarchiver
 
@@ -77,13 +76,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f xarchiver.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/xarchiver
-%attr(755,root,root) %{_libdir}/thunar-archive-plugin/*.tap
-%dir %{_docdir}/xarchiver
+%attr(755,root,root) %{_libexecdir}/thunar-archive-plugin/*.tap
 %docdir %{_docdir}/xarchiver
-%{_docdir}/xarchiver/html
+%{_docdir}/xarchiver
 %{_iconsdir}/hicolor/*/apps/xarchiver.png
 %{_iconsdir}/hicolor/scalable/apps/xarchiver.svg
 %{_pixmapsdir}/xarchiver
 %{_desktopdir}/*.desktop
+%{_mandir}/man1/xarchiver.1*
