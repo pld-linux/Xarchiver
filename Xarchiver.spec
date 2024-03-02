@@ -3,12 +3,12 @@
 Summary:	Xarchiver - a GTK+3 frontend to popular compression formats
 Summary(pl.UTF-8):	Xarchiver - nakładka GTK+3 na popularne formaty kompresji
 Name:		Xarchiver
-Version:	0.5.4.21
+Version:	0.5.4.23
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	https://github.com/ib/xarchiver/archive/%{version}/xarchiver-%{version}.tar.gz
-# Source0-md5:	94621a793a45521ef55702e940442552
+# Source0-md5:	bfdace2b113417e1bc77ef304280d103
 Patch0:		%{name}-desktop.patch
 URL:		https://github.com/ib/xarchiver/wiki
 BuildRequires:	autoconf >= 2.50
